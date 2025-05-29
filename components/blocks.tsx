@@ -7,6 +7,7 @@ import { ExampleListingGrid } from "@/registry/brnd/examples/example-listing-gri
 import { ExampleSectionWithBookingForm } from "@/registry/brnd/examples/example-section-booking";
 import { ExampleSectionWithListing } from "@/registry/brnd/examples/example-section-listing";
 import { ContactForm } from "@/registry/brnd/forms/contact-form";
+import { SiteHeader } from "@/registry/brnd/header/header";
 import { MainNav } from "@/registry/brnd/navigation/main-nav";
 import { MainNavItem } from "@/types/nav";
 
@@ -60,5 +61,10 @@ export const blocks: MainNavItem[] = [
     title: "Example Hero",
     name: "example-hero",
     component: ExampleHero,
+  },
+  {
+    title: "Header",
+    name: "header",
+    component: SiteHeader,
   },
 ];

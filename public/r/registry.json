@@ -38,6 +38,18 @@
       ]
     },
     {
+      "name": "header",
+      "type": "registry:block",
+      "title": "Header",
+      "description": "A header component.",
+      "files": [
+        {
+          "path": "registry/brnd/header/header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "logo",
       "type": "registry:block",
       "title": "Logo",
