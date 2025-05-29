@@ -1,18 +1,14 @@
-import { McpSetup } from "@/components/mcp-setup";
-import { ModeToggle } from "@/components/mode-toggle";
+import { MainLayout } from "@/components/layout/main-layout";
 import { Providers } from "@/components/providers";
-import { Logo } from "@/registry/brnd/branding/logo";
-import { Separator } from "@/registry/brnd/ui/separator";
 import { Toaster } from "@/registry/brnd/ui/sonner";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-import Link from "next/link";
 import "./globals.css";
 
 const title = "Brnd";
-const description = "A example registry for distributing code using shadcn.";
+const description = "A registry for distributing code using shadcn.";
 
 export const metadata: Metadata = {
   title: {
@@ -51,30 +47,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}
+        className={`${GeistSans.variable} ${GeistMono.variable} h-full font-sans antialiased`}
       >
         <Providers>
-          <header>
-            <div className="max-w-7xl mx-auto flex items-center px-4 py-6">
-              <div className="flex items-center gap-4">
-                <Link href="/">
-                  <div className="flex items-center gap-2">
-                    <Logo className="size-5" />
-                    <span className="text-lg font-medium font-mono">Brnd</span>
-                  </div>
-                </Link>
-                <Separator orientation="vertical" className="!h-6" />
-                <p className="text-muted-foreground hidden md:block line-clamp-1 text-sm">
-                  An brnd registry for distributing code using shadcn.
-                </p>
-              </div>
-              <div className="ml-auto flex gap-2">
-                <McpSetup />
-                <ModeToggle />
-              </div>
-            </div>
-          </header>
-          {children}
+          <MainLayout>{children}</MainLayout>
           <Toaster position="top-center" />
         </Providers>
         <Analytics />
