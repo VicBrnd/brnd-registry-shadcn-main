@@ -1,22 +1,19 @@
 import { AddCommand } from "@/components/add-command";
 import { OpenInV0 } from "@/components/open-in-v0";
-import * as React from "react";
 
 import { blocks } from "@/components/blocks";
 import registry from "@/registry.json";
 import { Separator } from "@/registry/brnd/ui/separator";
-import { registryItemSchema } from "shadcn/registry";
+import * as React from "react";
+import { RegistryItem } from "shadcn/registry";
 
-const getRegistryItemFromJson = React.cache((name: string) => {
-  const registryItem = registry.items.find((item) => item.name === name);
-
-  const result = registryItemSchema.safeParse(registryItem);
-  if (!result.success) {
-    return null;
+const getRegistryItemFromJson = React.cache(
+  (name: string): RegistryItem | null => {
+    return registry.items.find(
+      (item) => item.name === name
+    ) as RegistryItem | null;
   }
-
-  return result.data;
-});
+);
 
 export default function Home() {
   return (
