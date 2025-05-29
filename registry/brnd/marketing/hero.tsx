@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils"
-import Image from "next/image"
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export function Hero({
   heading,
@@ -8,12 +8,12 @@ export function Hero({
   className,
   children,
 }: {
-  heading: string
-  subheading: string
-  imageUrl: string
+  heading: string;
+  subheading: string;
+  imageUrl: string;
 } & React.ComponentProps<"section">) {
   return (
-    <section className={cn("w-full py-8 md:py-16", className)}>
+    <section className={cn("w-full", className)}>
       <div className="container mx-auto px-4">
         <div className="relative rounded-lg overflow-hidden">
           <Image
@@ -37,5 +37,5 @@ export function Hero({
         </div>
       </div>
     </section>
-  )
+  );
 }

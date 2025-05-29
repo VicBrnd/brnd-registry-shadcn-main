@@ -2,8 +2,8 @@
 
 import * as React from "react";
 
+import { blocks } from "@/components/blocks";
 import { NavDocuments } from "@/components/sidebar/nav-documents";
-import { docsConfig } from "@/config/docs";
 import { Logo } from "@/registry/brnd/branding/logo";
 import {
   Sidebar,
@@ -12,6 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/registry/brnd/ui/sidebar";
+import Link from "next/link";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -23,15 +24,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="#">
+              <Link href="/registry">
                 <Logo className="!size-5" />
                 <span className="text-base font-medium">Brnd Registry</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <NavDocuments config={docsConfig} />
+      <NavDocuments items={blocks} />
     </Sidebar>
   );
 }

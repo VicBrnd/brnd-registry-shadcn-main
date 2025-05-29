@@ -1,4 +1,3 @@
-import { MainLayout } from "@/components/layout/main-layout";
 import { Providers } from "@/components/providers";
 import { Toaster } from "@/registry/brnd/ui/sonner";
 import { Analytics } from "@vercel/analytics/react";
@@ -50,7 +49,7 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${GeistMono.variable} h-full font-sans antialiased`}
       >
         <Providers>
-          <MainLayout>{children}</MainLayout>
+          {children}
           <Toaster position="top-center" />
         </Providers>
         <Analytics />

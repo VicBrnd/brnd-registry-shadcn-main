@@ -1,18 +1,9 @@
-import { Icons } from "@/components/icons";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 export interface NavItem {
+  name: string;
   title: string;
-  href?: string;
-  disabled?: boolean;
-  external?: boolean;
-  icon?: keyof typeof Icons;
-  label?: string;
-}
-
-export interface NavItemWithChildren extends NavItem {
-  items: NavItemWithChildren[];
+  component?: any;
 }
 
 export type MainNavItem = NavItem;
-
-export type SidebarNavItem = NavItemWithChildren;

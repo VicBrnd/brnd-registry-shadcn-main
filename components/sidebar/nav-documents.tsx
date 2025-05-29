@@ -1,6 +1,5 @@
 "use client";
 
-import { DocsConfig } from "@/config/docs";
 import {
   SidebarContent,
   SidebarGroup,
@@ -9,32 +8,30 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/registry/brnd/ui/sidebar";
+import { MainNavItem } from "@/types/nav";
 
-export function NavDocuments({ config }: { config: DocsConfig }) {
-  const items = config.sidebarNav;
-
+export function NavDocuments({ items }: { items: MainNavItem[] }) {
   return (
     <SidebarContent>
-      {items.map((item) => (
-        <SidebarGroup key={item.title}>
-          <h4 className="rounded-md px-2 py-1 text-sm font-medium">
-            {item.title}
-          </h4>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {item.items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.href} className="font-normal text-foreground">
-                      {item.title}
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      ))}
+      <SidebarGroup>
+        <h4 className="rounded-md px-2 py-1 text-sm font-medium">Components</h4>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            {items.map((item) => (
+              <SidebarMenuItem key={item.name}>
+                <SidebarMenuButton asChild>
+                  <a
+                    href={`/registry/${item.name}`}
+                    className="font-normal text-foreground"
+                  >
+                    {item.title}
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
     </SidebarContent>
   );
 }

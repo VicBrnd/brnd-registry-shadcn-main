@@ -1,55 +1,91 @@
-import { AddCommand } from "@/components/add-command";
-import { OpenInV0 } from "@/components/open-in-v0";
+"use client";
 
-import { blocks } from "@/components/blocks";
-import registry from "@/registry.json";
-import { Separator } from "@/registry/brnd/ui/separator";
-import * as React from "react";
-import { RegistryItem } from "shadcn/registry";
+import { useEffect, useMemo, useState } from "react";
 
-const getRegistryItemFromJson = React.cache(
-  (name: string): RegistryItem | null => {
-    return registry.items.find(
-      (item) => item.name === name
-    ) as RegistryItem | null;
-  }
-);
+import { motion } from "framer-motion";
+import { MoveRight } from "lucide-react";
+import Link from "next/link";
 
-export default function Home() {
+import { TextScramble } from "@/components/animate-ui/text-scramble";
+import { buttonVariants } from "@/registry/brnd/ui/button";
+
+export default function Page() {
+  const [titleNumber, setTitleNumber] = useState(0);
+  const titles = useMemo(() => ["Shadcn", "Components", "You"], []);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (titleNumber === titles.length - 1) {
+        setTitleNumber(0);
+      } else {
+        setTitleNumber(titleNumber + 1);
+      }
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, [titleNumber, titles]);
+
   return (
-    <main className="max-w-7xl mx-auto flex flex-col px-4 py-8 flex-1 gap-8 md:gap-12">
-      {blocks.map((block) => {
-        const registryItem = getRegistryItemFromJson(block.name);
-        if (!registryItem) {
-          return null;
-        }
+    <div className="min-h-screen flex items-center justify-center px-4">
+      <div className="container mx-auto">
+        <div className="flex gap-8 items-center justify-center flex-col">
+          <div className="flex gap-4 flex-col">
+            <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
+              <span className="text-spektr-cyan-50">
+                Registry <span className="font-mono">for</span>.
+              </span>
+              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
+                &nbsp;
+                {titles.map((title, index) => (
+                  <motion.span
+                    key={index}
+                    className="absolute font-semibold"
+                    initial={{ opacity: 0, y: "-100" }}
+                    transition={{ type: "spring", stiffness: 50 }}
+                    animate={
+                      titleNumber === index
+                        ? {
+                            y: 0,
+                            opacity: 1,
+                          }
+                        : {
+                            y: titleNumber > index ? -150 : 150,
+                            opacity: 0,
+                          }
+                    }
+                  >
+                    {title}
+                  </motion.span>
+                ))}
+              </span>
+            </h1>
 
-        return (
-          <div key={registryItem.name} className="flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="text-sm line-clamp-1 font-medium">
-                  {registryItem.title}
-                </div>
-                <Separator
-                  orientation="vertical"
-                  className="!h-4 hidden lg:flex"
-                />
-                <div className="text-sm text-muted-foreground line-clamp-1 hidden lg:flex">
-                  {registryItem.description}
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <AddCommand registryItem={registryItem} />
-                <OpenInV0 name={registryItem.name} className="w-fit" />
-              </div>
-            </div>
-            <div className="flex items-center border rounded-lg justify-center min-h-[400px] p-4 md:p-10 relative bg-muted/30">
-              <block.component />
-            </div>
+            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+              Accelerate your development with a curated library of modern,
+              accessible, and fully customizable UI elements—built for
+              production.
+            </p>
           </div>
-        );
-      })}
-    </main>
+          <div className="flex flex-row gap-3">
+            <Link
+              href="/registry"
+              className={buttonVariants({
+                variant: "secondary",
+                className: "h-8",
+                size: "sm",
+              })}
+            >
+              <TextScramble
+                className="font-mono text-sm"
+                duration={0.6}
+                characterSet=". "
+              >
+                Components
+              </TextScramble>
+              <MoveRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
