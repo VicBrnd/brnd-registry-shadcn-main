@@ -1,0 +1,189 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "brnd",
+  "homepage": "https://registry.brndhub.dev/",
+  "items": [
+    {
+      "name": "brnd",
+      "type": "registry:style",
+      "cssVars": {
+        "light": {
+          "primary": "oklch(0.63 0.17 149)",
+          "primary-foreground": "oklch(0.985 0 0)",
+          "radius": "0.825rem"
+        },
+        "dark": {
+          "primary": "oklch(0.63 0.17 149)",
+          "primary-foreground": "oklch(0.985 0 0)"
+        }
+      },
+      "files": [
+        {
+          "path": "registry/brnd/rules/registry.mdc",
+          "type": "registry:file",
+          "target": ".cursor/rules/registry.mdc"
+        }
+      ]
+    },
+    {
+      "name": "login-form",
+      "type": "registry:block",
+      "title": "Login Form",
+      "description": "A login form with email and password fields.",
+      "files": [
+        {
+          "path": "registry/brnd/auth/login-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "logo",
+      "type": "registry:block",
+      "title": "Logo",
+      "description": "A logo component.",
+      "files": [
+        {
+          "path": "registry/brnd/branding/logo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "main-nav",
+      "type": "registry:block",
+      "title": "Main Nav",
+      "description": "A main navigation component.",
+      "files": [
+        {
+          "path": "registry/brnd/navigation/main-nav.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "listing-card",
+      "type": "registry:block",
+      "title": "Listing Card",
+      "description": "A listing card with a name, location, rating, and review count.",
+      "files": [
+        {
+          "path": "registry/brnd/listing/listing-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "listing-grid",
+      "type": "registry:block",
+      "title": "Listing Grid",
+      "description": "A grid of listing cards.",
+      "files": [
+        {
+          "path": "registry/brnd/listing/listing-grid.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/brnd/listing/listing-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "booking-form",
+      "type": "registry:block",
+      "title": "Booking Form",
+      "description": "A booking form with location, check-in, and check-out fields.",
+      "files": [
+        {
+          "path": "registry/brnd/forms/booking-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "contact-form",
+      "type": "registry:block",
+      "title": "Contact Form",
+      "description": "A contact form with name, email, and message fields.",
+      "files": [
+        {
+          "path": "registry/brnd/forms/contact-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "example-listing-card",
+      "type": "registry:block",
+      "title": "Example Listing Card",
+      "description": "An example listing card.",
+      "files": [
+        {
+          "path": "registry/brnd/examples/example-listing-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "example-listing-grid",
+      "type": "registry:block",
+      "title": "Example Listing Grid",
+      "description": "An example listing grid.",
+      "files": [
+        {
+          "path": "registry/brnd/examples/example-listing-grid.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "example-section-listing",
+      "type": "registry:block",
+      "title": "Section with Heading and Listing Grid",
+      "description": "An example section with a heading, subheading, and listing grid.",
+      "files": [
+        {
+          "path": "registry/brnd/examples/example-section-listing.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "example-section-booking",
+      "type": "registry:block",
+      "title": "Section with Booking Form",
+      "description": "An example section with a booking form.",
+      "files": [
+        {
+          "path": "registry/brnd/examples/example-section-booking.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "example-hero",
+      "type": "registry:block",
+      "title": "Example Hero Section",
+      "description": "An example hero section with a heading, subheading, and two call to action buttons.",
+      "files": [
+        {
+          "path": "registry/brnd/examples/example-hero.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "calendar",
+      "description": "A calendar component",
+      "files": [
+        {
+          "path": "registry/brnd/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
