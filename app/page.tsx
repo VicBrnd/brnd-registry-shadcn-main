@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 
-import { TextScramble } from "@/components/animate-ui/text-scramble";
+import { TextScramble } from "@/registry/brnd/text-scramble/text-scramble";
 import { buttonVariants } from "@/registry/brnd/ui/button";
 
 export default function Page() {

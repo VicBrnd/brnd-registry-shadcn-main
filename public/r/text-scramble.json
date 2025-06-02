@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-scramble",
+  "type": "registry:block",
+  "title": "Text Scramble",
+  "description": "A text scramble component.",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/brnd/text-scramble/text-scramble.tsx",
+      "content": "",
+      "type": "registry:component"
+    }
+  ]
+}

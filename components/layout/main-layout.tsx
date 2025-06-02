@@ -1,5 +1,5 @@
+import { SiteHeader } from "@/components/layout/site-header";
 import { AppSidebar } from "@/components/sidebar/app-sidebar";
-import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/registry/brnd/ui/sidebar";
 import { cookies } from "next/headers";
 
