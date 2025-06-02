@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "copy-button",
+  "type": "registry:block",
+  "title": "Copy Button",
+  "description": "A copy button component.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/brnd/copy-button/copy-button.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { AnimatePresence, motion } from \"framer-motion\";\nimport { useOptimistic, useTransition } from \"react\";\n\ninterface CopyButtonProps {\n  text: string;\n  textCopied: string;\n  className?: string;\n}\n\nexport function CopyButton({ text, textCopied, className }: CopyButtonProps) {\n  const [state, setState] = useOptimistic<\"idle\" | \"copied\">(\"idle\");\n  const [, startTransition] = useTransition();\n\n  return (\n    <motion.span\n      role=\"button\"\n      aria-label={state === \"idle\" ? `Copy \"${text}\"` : \"Text Copied\"}\n      className={cn(\n        \"relative rounded text-gray-600 transition-colors bg-gray-600/10 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold hover:text-gray-700 hover:bg-gray-700/10 inline-flex items-center justify-center cursor-default\",\n        className\n      )}\n      onClick={() => {\n        startTransition(async () => {\n          navigator.clipboard.writeText(textCopied);\n          setState(\"copied\");\n          await new Promise((resolve) => setTimeout(resolve, 2000));\n          setState(\"idle\");\n        });\n      }}\n      whileTap={{ scale: 0.95 }}\n    >\n      <span className=\"invisible whitespace-pre\">{text}</span>\n      <AnimatePresence mode=\"wait\" initial={false}>\n        <motion.span\n          key={state}\n          className={cn(\n            \"absolute inset-0 flex items-center justify-center\",\n            state === \"copied\" && \"text-green-600\"\n          )}\n          initial={{ opacity: 0, y: 10 }}\n          animate={{ opacity: 1, y: 0 }}\n          exit={{ opacity: 0, y: -10 }}\n          transition={{ duration: 0.2, ease: [0.68, -0.6, 0.32, 1.6] }}\n          role=\"status\"\n          aria-live=\"polite\"\n        >\n          {state === \"idle\" ? text : \"Copied!\"}\n        </motion.span>\n      </AnimatePresence>\n    </motion.span>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

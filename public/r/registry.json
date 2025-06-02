@@ -56,19 +56,7 @@
       "description": "A editor component.",
       "files": [
         {
-          "path": "registry/brnd/header/header.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "link preview",
-      "type": "registry:block",
-      "title": "Link Preview",
-      "description": "A link preview component.",
-      "files": [
-        {
-          "path": "registry/brnd/link-preview/link-preview.tsx",
+          "path": "registry/brnd/editor/editor.tsx",
           "type": "registry:component"
         }
       ]
@@ -81,6 +69,30 @@
       "files": [
         {
           "path": "registry/brnd/text-scramble/text-scramble.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "link-preview",
+      "type": "registry:block",
+      "title": "Link Preview",
+      "description": "A link preview component.",
+      "files": [
+        {
+          "path": "registry/brnd/link-preview/link-preview.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:block",
+      "title": "Copy Button",
+      "description": "A copy button component.",
+      "files": [
+        {
+          "path": "registry/brnd/copy-button/copy-button.tsx",
           "type": "registry:component"
         }
       ]

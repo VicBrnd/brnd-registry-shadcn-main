@@ -1,11 +1,11 @@
 "use client";
 import { McpSetup } from "@/components/mcp-setup";
 import { ModeToggle } from "@/components/mode-toggle";
-import { Header } from "@/registry/brnd/ui/header";
+import { Header } from "@/registry/brnd/header/header";
 import { Separator } from "@/registry/brnd/ui/separator";
 import { SidebarTrigger } from "@/registry/brnd/ui/sidebar";
 
-export function SiteHeader() {
+export function HeaderExample() {
   return (
     <Header>
       <div className="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">

@@ -56,7 +56,7 @@
       "description": "A editor component.",
       "files": [
         {
-          "path": "registry/brnd/header/header.tsx",
+          "path": "registry/brnd/editor/editor.tsx",
           "type": "registry:component"
         }
       ]
@@ -68,7 +68,7 @@
       "description": "A text scramble component.",
       "files": [
         {
-          "path": "components/animate-ui/text-scramble.tsx",
+          "path": "registry/brnd/text-scramble/text-scramble.tsx",
           "type": "registry:component"
         }
       ]

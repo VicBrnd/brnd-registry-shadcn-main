@@ -1,7 +1,7 @@
 "use client";
 import { McpSetup } from "@/components/mcp-setup";
 import { ModeToggle } from "@/components/mode-toggle";
-import { Header } from "@/registry/brnd/ui/header";
+import { Header } from "@/registry/brnd/header/header";
 import { Separator } from "@/registry/brnd/ui/separator";
 import { SidebarTrigger } from "@/registry/brnd/ui/sidebar";
 

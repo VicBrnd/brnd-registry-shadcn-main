@@ -1,7 +1,7 @@
 import { Logo } from "@/registry/brnd/branding/logo";
 import { CopyButtonExample } from "@/registry/brnd/copy-button/copy-button-example";
-import { Editor } from "@/registry/brnd/editor/editor";
-import { SiteHeader } from "@/registry/brnd/header/header-example";
+import { EditorExample } from "@/registry/brnd/editor/editor-example";
+import { HeaderExample } from "@/registry/brnd/header/header-example";
 import { LinkPreviewExample } from "@/registry/brnd/link-preview/link-preview-example";
 import { TextScrambleExample } from "@/registry/brnd/text-scramble/text-scramble-example";
 import { MainNavItem } from "@/types/nav";
@@ -21,12 +21,12 @@ export const blocks: MainNavItem[] = [
   {
     title: "Header",
     name: "header",
-    component: SiteHeader,
+    component: HeaderExample,
   },
   {
     title: "Editor",
     name: "editor",
-    component: Editor,
+    component: EditorExample,
   },
   {
     title: "Link Preview",
